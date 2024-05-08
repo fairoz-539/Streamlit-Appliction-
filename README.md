@@ -36,7 +36,7 @@ We welcome contributions to the FRZ_APP project! If you encounter any issues or 
 
 ## License
 
-This project is licensed under the [MIT License]().
+This project is licensed under the [MIT License](https://github.com/fairoz-539/FRZ_APP/tree/main).
 
 ## Acknowledgments
 
