@@ -195,84 +195,84 @@ if btn:
     else:
         with open("form_values.txt", "w") as file:
             st.success("Form submitted successfully!")
-        st.warning("Please fill the front details if not filled.")
-        st.write("To know the Instructions click")
-        st.page_link("pages/2_📑_instructions.py",label="Instructions",icon="📑")
-        # Get user input
-        question = st.text_input("Enter Your Question:")
-        question = question.upper()
+st.warning("Please fill the front details if not filled.")
+st.write("To know the Instructions click")
+st.page_link("pages/2_📑_instructions.py",label="Instructions",icon="📑")
+# Get user input
+question = st.text_input("Enter Your Question:")
+question = question.upper()
         
-        # Select custom font
-        font_options = [
-            'Arial', 'Times New Roman', 'Courier New', 'Verdana',
-            'Helvetica', 'Georgia', 'Comic Sans MS', 'Impact', 'Tahoma',
-            'Brush Script MT', 'Lucida Handwriting', 'Papyrus', 'Segoe Script'
-            # Add more fonts as needed
-        ]
-        font_family = st.selectbox("Select Font Family:", font_options)
+# Select custom font
+font_options = [
+    'Arial', 'Times New Roman', 'Courier New', 'Verdana',
+    'Helvetica', 'Georgia', 'Comic Sans MS', 'Impact', 'Tahoma',
+    'Brush Script MT', 'Lucida Handwriting', 'Papyrus', 'Segoe Script'
+     # Add more fonts as needed
+]
+font_family = st.selectbox("Select Font Family:", font_options)
         
-        col1, col2 = st.columns(2)
+col1, col2 = st.columns(2)
         
-        with col1:
-            heading_color = st.selectbox("select Header Color:", ["#393b3d", "blue"])
-        with col2:
-            text_color = st.selectbox("Select Font Color:", ["#307bd1", "#393b3d"])
+with col1:
+    heading_color = st.selectbox("select Header Color:", ["#393b3d", "blue"])
+with col2:
+    text_color = st.selectbox("Select Font Color:", ["#307bd1", "#393b3d"])
         
         # Generate answer when button is clicked
-        if st.button("Generate Answer"):
-            # Add a placeholder
-            latest_iteration = st.empty()
-            bar = st.progress(0)
+if st.button("Generate Answer"):
+ # Add a placeholder
+latest_iteration = st.empty()
+bar = st.progress(0)
         
-            for i in range(100):
-                # Update the progress bar with each iteration.
-                latest_iteration.text(f'Loading ....')
-                bar.progress(i + 1)
-                time.sleep(0.1)
-            answer = generate_answer(question)
-            latest_iteration.text(f'Loading Complete')
+for i in range(100):
+# Update the progress bar with each iteration.
+    latest_iteration.text(f'Loading ....')
+    bar.progress(i + 1)
+    time.sleep(0.1)
+    answer = generate_answer(question)
+    latest_iteration.text(f'Loading Complete')
         
-            col3, col4 = st.columns(2)
+    col3, col4 = st.columns(2)
         
-            with col3:
-                st.title(question)
-                st.write(answer)
-            with col4:
-                # Display answer in HTML format
-                st.markdown(
+    with col3:
+        st.title(question)
+        st.write(answer)
+    with col4:
+         # Display answer in HTML format
+         st.markdown(
                     f"<h1 style='font-family:{font_family};'>{question}</h1><p style='font-family:{font_family}'>{answer}</p>",
                     unsafe_allow_html=True)
-            st.balloons()
+         st.balloons()
         
         # Generate PDF when button is clicked
-        if st.button("Generate PDF"):
-            latest_iteration = st.empty()
-            bar = st.progress(0)
-            for i in range(100):
-                # Update the progress bar with each iteration.
-                latest_iteration.text(f'Generating PDF ....')
-                bar.progress(i + 1)
-                time.sleep(0.2)
-                latest_iteration.text(f'Done')
+if st.button("Generate PDF"):
+    latest_iteration = st.empty()
+     bar = st.progress(0)
+     for i in range(100):
+         # Update the progress bar with each iteration.
+         latest_iteration.text(f'Generating PDF ....')
+         bar.progress(i + 1)
+         time.sleep(0.2)
+         latest_iteration.text(f'Done')
         
-            answer = generate_answer(question)
-            if answer:
-                try:
-                    pdf_file_path = generate_pdf(question, answer, name, rno,sec, sub, assign_num, font_family)
-                    if pdf_file_path:
-                        st.success("PDF generated successfully!")
-                        with open(pdf_file_path, "rb") as f:
-                            pdf_contents = f.read()
-                            base64_pdf = base64.b64encode(pdf_contents).decode("utf-8")
+         answer = generate_answer(question)
+         if answer:
+             try:
+                 pdf_file_path = generate_pdf(question, answer, name, rno,sec, sub, assign_num, font_family)
+                 if pdf_file_path:
+                     st.success("PDF generated successfully!")
+                     with open(pdf_file_path, "rb") as f:
+                         pdf_contents = f.read()
+                         base64_pdf = base64.b64encode(pdf_contents).decode("utf-8")
         
                             # Display download link
-                            download_link = f'<a href="data:application/pdf;base64,{base64_pdf}" download="Output.pdf">Download PDF</a>'
-                            st.markdown(download_link, unsafe_allow_html=True)
-                        st.balloons()
-                except Exception as e:
+                         download_link = f'<a href="data:application/pdf;base64,{base64_pdf}" download="Output.pdf">Download PDF</a>'
+                         st.markdown(download_link, unsafe_allow_html=True)
+                         st.balloons()
+              except Exception as e:
                     st.error("Error generating PDF: {}".format(e))
-            else:
-                st.error("Error generating PDF.")
+           else:
+               st.error("Error generating PDF.")
         
         
         st.write("To Give feedback click the below option !")
