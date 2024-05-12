@@ -7,7 +7,7 @@ st.set_page_config(
     layout='wide'
 )
 
-
+st.pagelink("3_🏠_Home.py",icon="🏠")
 st.write("# Assignment Writer App 🤖
 
 Welcome to the Assignment Writer App! This app allows you to generate digital assignments quickly and easily.
@@ -52,3 +52,5 @@ We're constantly improving the Assignment Writer App. If you have any feedback o
 - Fairoz (Salroz)
 
 ")
+
+
