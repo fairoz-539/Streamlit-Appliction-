@@ -196,6 +196,8 @@ if btn:
         with open("form_values.txt", "w") as file:
             st.success("Form submitted successfully!")
         st.warning("Please fill the front details if not filled.")
+        st.write("To know the Instructions click")
+        st.page_link("pages/2_📑_instructions.py",label="Instructions",icon="📑")
         # Get user input
         question = st.text_input("Enter Your Question:")
         question = question.upper()
@@ -274,6 +276,6 @@ if btn:
         
         
         st.write("To Give feedback click the below option !")
-        st.page_link
+        st.page_link("pages/4_🧾_feedback.py",label="Give Feedback",icon="🧾")
         st.info("""Our application is still in training Phase,so it may encounter occasional errors or inaccuracies.
                 We value your feedback to help improve and refine its performance. Please take a moment to share your thoughts by navigating to the feedback section in the sidebar. Your input is greatly appreciated!""")
