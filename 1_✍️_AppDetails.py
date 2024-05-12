@@ -7,7 +7,6 @@ st.set_page_config(
     layout='wide'
 )
 
-st.pagelink("3_🏠_Home.py",icon="🏠")
 
-
+st.page_link("pages/3_🏠_Home.py",label="Home",icon="🏠")
 
