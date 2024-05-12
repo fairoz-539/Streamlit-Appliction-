@@ -8,7 +8,12 @@ import time
 st.set_page_config(
     page_title="Assignment_writer",
     page_icon="🤖",
-    layout='wide'
+    layout='wide',
+    base="dark"
+    primaryColor="#3744f7"
+    backgroundColor="#0c1835"
+    secondaryBackgroundColor="#052958"
+    font="monospace"
 )
 
 hds= """<style>
