@@ -5,6 +5,11 @@ import base64
 from streamlit.errors import StreamlitAPIException
 import time
 
+st.set_page_config(
+    page_title="Assignment_writer",
+    page_icon="🤖",
+    layout='wide'
+)
 
 hds= """<style>
 	MainMenu {visibility: hidden;}
@@ -13,11 +18,6 @@ hds= """<style>
 """
 st.markdown(hds, unsafe_allow_html=True)
 
-st.set_page_config(
-    page_title="Assignment_writer",
-    page_icon="🤖",
-    layout='wide'
-)
 
 def generate_answer(question):
     try:
