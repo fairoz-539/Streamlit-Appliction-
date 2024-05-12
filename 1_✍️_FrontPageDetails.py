@@ -8,28 +8,47 @@ st.set_page_config(
 )
 
 
+st.write("# Assignment Writer App 🤖
 
-# Streamlit UI
-st.title("Assignment Writer App")
+Welcome to the Assignment Writer App! This app allows you to generate digital assignments quickly and easily.
 
-st.info('Fill this form for Your front page details', icon="ℹ️")
-with st.form("form1", clear_on_submit=True, border=True):
-    name = st.text_input("Enter Your Name: ")
-    rno = st.text_input("Enter Your Roll No: ")
-    sec = st.text_input("Enter Your Section: ")
-    sub = st.text_input("Enter Your subject title: ")
-    assign_num = st.selectbox("Select Assignment number: ", [1, 2])
-    btn = st.form_submit_button("Submit")
+## Features
 
-if btn:
-    if not name or not rno or not sub or not assign_num:
-        st.error("Please fill out all required fields!")
-    else:
-        with open("form_values.txt", "w") as file:
-            file.write(f"{name}\n")
-            file.write(f"{rno}\n")
-            file.write(f"{sec}\n")
-            file.write(f"{sub}\n")
-            file.write(f"{assign_num}\n")
-            st.success("Form submitted successfully!")
-            st.page_link("pages/3_🏠_Home.py",label="Home")
+✏️ Generate assignments with ease  
+🔍 Get answers from Wikipedia  
+📄 Download assignments as PDF  
+
+## Installation
+
+To install the Assignment Writer App, follow these steps:
+
+1. Clone this repository to your local machine.
+2. Install the required dependencies by running: `pip install -r requirements.txt`.
+3. Run the app using Streamlit: `streamlit run app.py`.
+
+## Usage
+
+1. Enter your question in the input box provided.
+2. Click on the "Generate Answer" button to get the answer from Wikipedia.
+3. Customize the font and colors using the dropdown menus.
+4. Click on the "Generate PDF" button to download the assignment as a PDF.
+
+## Themes
+
+The app supports the following themes:
+
+- Base: Dark
+- Primary Color: #3744f7
+- Background Color: #0c1835
+- Secondary Background Color: #052958
+- Font: Monospace
+
+## Feedback
+
+We're constantly improving the Assignment Writer App. If you have any feedback or suggestions, please feel free to [submit an issue]or [reach out to us].
+
+## Contributors
+
+- Fairoz (Salroz)
+
+")
