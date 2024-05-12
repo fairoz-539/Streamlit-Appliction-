@@ -8,13 +8,33 @@ import time
 st.set_page_config(
     page_title="Assignment_writer",
     page_icon="🤖",
-    layout='wide',
-    base="dark",
-    primaryColor="#3744f7",
-    backgroundColor="#0c1835",
-    secondaryBackgroundColor="#052958",
-    font="monospace"
+    layout='wide'
 )
+
+custom_css = """
+<style>
+body {
+    background-color: #0c1835;
+    color: white;
+    font-family: monospace;
+}
+.sidebar .sidebar-content {
+    background-color: #052958;
+}
+.css-145kmo2 .element-container, .css-1aumxhk {
+    background-color: #052958 !important;
+}
+.css-145kmo2 .stRadio div, .css-145kmo2 .stSelectbox div {
+    color: white !important;
+}
+</style>
+"""
+
+# Apply custom CSS
+st.markdown(custom_css, unsafe_allow_html=True)
+
+# Continue with your Streamlit app code below
+
 
 hds= """<style>
     MainMenu {visibility: hidden;}
