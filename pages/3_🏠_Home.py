@@ -232,7 +232,7 @@ if st.button("Generate PDF"):
                     pdf_display = f'<embed src="data:application/pdf;base64,{base64_pdf}" width="700" height="700" ' \
                                   f'type="application/pdf" filename="Output.pdf">'
                     st.markdown(pdf_display, unsafe_allow_html=True)
-            st.balloons()
+           	 st.balloons()
         except Exception as e:
             st.error("Error generating PDF: {}".format(e))
     else:
