@@ -219,7 +219,7 @@ if st.button("Generate PDF"):
         rno = file.readline().strip()
         sec = file.readline().strip()
         sub = file.readline().strip()
-        assign_num = int(file.readline().strip())
+        assign_num = file.readline().strip()
 
     answer = generate_answer(question)
     if answer:
