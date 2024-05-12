@@ -253,14 +253,6 @@ if st.button("Generate PDF"):
         time.sleep(0.2)
         latest_iteration.text(f'Done')
 
-    # Read form values from the temporary file
-    with open("form_values.txt", "r") as file:
-        name = file.readline().strip()
-        rno = file.readline().strip()
-        sec = file.readline().strip()
-        sub = file.readline().strip()
-        assign_num = file.readline().strip()
-
     answer = generate_answer(question)
     if answer:
         try:
