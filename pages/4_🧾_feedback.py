@@ -1,6 +1,14 @@
 import streamlit as st
 import os
 
+
+st.set_page_config(
+    page_title="Assignment_writer",
+    page_icon="🤖",
+    layout='wide'
+)
+
+
 # Function to save feedback to a text file
 def save_feedback(name, email, feedback):
     feedback_text = f"Name: {name}\nEmail: {email}\nFeedback: {feedback}\n\n"
