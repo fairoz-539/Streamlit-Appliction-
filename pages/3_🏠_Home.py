@@ -197,7 +197,7 @@ if btn:
             st.success("Form submitted successfully!")
         st.warning("Please fill the front details if not filled.")
         st.write("To know the Instructions click")
-        st.page_link("pages/2_📑_instructions.py",label="Instructions",icon="📑")
+        # st.page_link("pages/2_📑_instructions.py",label="Instructions",icon="📑")
         # Get user input
         question = st.text_input("Enter Your Question:")
         question = question.upper()
