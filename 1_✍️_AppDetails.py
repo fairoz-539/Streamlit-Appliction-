@@ -33,9 +33,6 @@ body {
 # Apply custom CSS
 st.markdown(custom_css, unsafe_allow_html=True)
 
-# Continue with your Streamlit app code below
-
-
 hds= """<style>
     MainMenu {visibility: hidden;}
     footer {visibility : hidden;}
@@ -61,22 +58,6 @@ def generate_answer(question):
 
 def generate_pdf(question, answer, name, rno, sec, sub, assign_num, font_family="Arial", heading_color="#393b3d", text_color="#307bd1"):
     try:
-        # Create a PDF document
-        # pdf_data = f"""
-        #     <div style='padding-bottom:300px;border: 1px solid transparent'>
-        #         <h1 style='font-size:70px;font-family:Lucida Handwriting;text-align:center;margin:400px 100px 0 100px;'>{sub}</h1>
-        #         <h2 style='margin-bottom: 300px;font-family:Lucida Handwriting;text-align:center'>Assignment-{assign_num}</h2>
-        #         <div style='width:100%;height:250px;margin-bottom:10px;border:1px solid transparent;padding-top:100px'>
-        #             <p style='text-align: right;text-decoration: underline;font-size:25px;font-family:{font_family};color:{heading_color};'>{name}</p>
-        #             <p style='text-align: right;text-decoration: underline;font-size:25px;font-family:{font_family};color:{heading_color};'>{rno}</p>
-        #         </div>
-        #         <div style='border: 1px solid transparent;padding-top:50px'>
-        #             <h1 style='font-family:{font_family};color:{heading_color};text-decoration:underline;padding:30px'>{question}</h1>
-        #             <p style='font-family:{font_family};color:{text_color};font-size:25px;line-height: 2.0'>{answer}</p>
-        #         </div>
-        #     </div>
-        # """
-
         # Create a PDF document
         pdf_data = f"""
         <html lang="en">
@@ -218,17 +199,17 @@ with col1:
 with col2:
     text_color = st.selectbox("Select Font Color:", ["#307bd1", "#393b3d"])
         
-        # Generate answer when button is clicked
+# Generate answer when button is clicked
 if st.button("Generate Answer"):
- # Add a placeholder
-latest_iteration = st.empty()
-bar = st.progress(0)
+    # Add a placeholder
+    latest_iteration = st.empty()
+    bar = st.progress(0)
         
-for i in range(100):
-# Update the progress bar with each iteration.
-    latest_iteration.text(f'Loading ....')
-    bar.progress(i + 1)
-    time.sleep(0.1)
+    for i in range(100):
+        # Update the progress bar with each iteration.
+        latest_iteration.text(f'Loading ....')
+        bar.progress(i + 1)
+        time.sleep(0.1)
     answer = generate_answer(question)
     latest_iteration.text(f'Loading Complete')
         
@@ -238,44 +219,43 @@ for i in range(100):
         st.title(question)
         st.write(answer)
     with col4:
-         # Display answer in HTML format
-         st.markdown(
-                    f"<h1 style='font-family:{font_family};'>{question}</h1><p style='font-family:{font_family}'>{answer}</p>",
-                    unsafe_allow_html=True)
-         st.balloons()
+        # Display answer in HTML format
+        st.markdown(
+            f"<h1 style='font-family:{font_family};'>{question}</h1><p style='font-family:{font_family}'>{answer}</p>",
+            unsafe_allow_html=True)
+        st.balloons()
         
-        # Generate PDF when button is clicked
+# Generate PDF when button is clicked
 if st.button("Generate PDF"):
     latest_iteration = st.empty()
-     bar = st.progress(0)
-     for i in range(100):
-         # Update the progress bar with each iteration.
-         latest_iteration.text(f'Generating PDF ....')
-         bar.progress(i + 1)
-         time.sleep(0.2)
-         latest_iteration.text(f'Done')
+    bar = st.progress(0)
+    for i in range(100):
+        # Update the progress bar with each iteration.
+        latest_iteration.text(f'Generating PDF ....')
+        bar.progress(i + 1)
+        time.sleep(0.2)
+    latest_iteration.text(f'Done')
         
-         answer = generate_answer(question)
-         if answer:
-             try:
-                 pdf_file_path = generate_pdf(question, answer, name, rno,sec, sub, assign_num, font_family)
-                 if pdf_file_path:
-                     st.success("PDF generated successfully!")
-                     with open(pdf_file_path, "rb") as f:
-                         pdf_contents = f.read()
-                         base64_pdf = base64.b64encode(pdf_contents).decode("utf-8")
+    answer = generate_answer(question)
+    if answer:
+        try:
+            pdf_file_path = generate_pdf(question, answer, name, rno,sec, sub, assign_num, font_family)
+            if pdf_file_path:
+                st.success("PDF generated successfully!")
+                with open(pdf_file_path, "rb") as f:
+                    pdf_contents = f.read()
+                    base64_pdf = base64.b64encode(pdf_contents).decode("utf-8")
         
-                            # Display download link
-                         download_link = f'<a href="data:application/pdf;base64,{base64_pdf}" download="Output.pdf">Download PDF</a>'
-                         st.markdown(download_link, unsafe_allow_html=True)
-                         st.balloons()
-              except Exception as e:
-                    st.error("Error generating PDF: {}".format(e))
-           else:
-               st.error("Error generating PDF.")
+                # Display download link
+                download_link = f'<a href="data:application/pdf;base64,{base64_pdf}" download="Output.pdf">Download PDF</a>'
+                st.markdown(download_link, unsafe_allow_html=True)
+                st.balloons()
+        except Exception as e:
+            st.error("Error generating PDF: {}".format(e))
+    else:
+        st.error("Error generating PDF.")
         
-        
-        st.write("To Give feedback click the below option !")
-        st.page_link("pages/4_🧾_feedback.py",label="Give Feedback",icon="🧾")
-        st.info("""Our application is still in training Phase,so it may encounter occasional errors or inaccuracies.
-                We value your feedback to help improve and refine its performance. Please take a moment to share your thoughts by navigating to the feedback section in the sidebar. Your input is greatly appreciated!""")
+st.write("To Give feedback click the below option !")
+st.page_link("pages/4_🧾_feedback.py",label="Give Feedback",icon="🧾")
+st.info("""Our application is still in training Phase,so it may encounter occasional errors or inaccuracies.
+    We value your feedback to help improve and refine its performance. Please take a moment to share your thoughts by navigating to the feedback section in the sidebar. Your input is greatly appreciated!""")
