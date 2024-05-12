@@ -229,8 +229,8 @@ if st.button("Generate PDF"):
                 st.success("PDF generated successfully!")
                 with open(pdf_file_path, "rb") as f:
                     base64_pdf = base64.b64encode(f.read()).decode('utf-8')
-                    pdf=f'<a href="data:application/pdf;base64,{base64_pdf}" download="Output.pdf">Download PDF</a>'
-		    st.markdown(pdf, unsafe_allow_html=True)
+			download_link = f'<a href="data:application/pdf;base64,{base64_pdf}" download="Output.pdf">Download PDF</a>'
+    st.markdown(download_link, unsafe_allow_html=True)
             st.balloons()
         except Exception as e:
             st.error("Error generating PDF: {}".format(e))
