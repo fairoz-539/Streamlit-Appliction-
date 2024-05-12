@@ -32,4 +32,4 @@ if btn:
             file.write(f"{sub}\n")
             file.write(f"{assign_num}\n")
             st.success("Form submitted successfully!")
-            st.page_link("pages/app.py",label="Home",icon="✍️")
+            st.page_link("pages/3_🏠_Home.py",label="Home")
