@@ -34,7 +34,7 @@ body {
 st.markdown(custom_css, unsafe_allow_html=True)
 
 hds= """<style>
-    MainMenu {visibility: hidden;}
+    #MainMenu {visibility: hidden;}
     footer {visibility : hidden;}
     </style>
 """
