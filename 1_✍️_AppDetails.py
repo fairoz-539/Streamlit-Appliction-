@@ -177,11 +177,10 @@ if btn:
         with open("form_values.txt", "w") as file:
             st.success("Form submitted successfully!")
 st.warning("Please fill the front details if not filled.")
-st.write("To know the Instructions click")
-st.page_link("pages/2_📑_instructions.py",label="Instructions",icon="📑")
+
+st.write("NOTE: please enter one word since it's in training phase")
 # Get user input
 question = st.text_input("Enter Your Question:")
-st.write("NOTE: please enter one word since it's in training phase")
 question = question.upper()
         
 # Select custom font
