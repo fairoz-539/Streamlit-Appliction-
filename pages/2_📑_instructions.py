@@ -11,7 +11,7 @@ st.title("INSTRUCTIONS !!")
 st.info("""\nInstructions to be Followed !
                 \nRead the Instructions correctly
                 \nStep 1: Enter the Question !
-                \nStep 2:Keep the Question clear and concise.
+                \nStep 2: Keep the Question clear and concise.
                 \nStep 3: Select Font and it\'s color
                 \nStep 4: Then click the generate answer button
                 \nStep 5: Click View pdf to check Your Generated pdf
