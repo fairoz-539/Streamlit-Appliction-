@@ -180,7 +180,7 @@ st.warning("Please fill the front details if not filled.")
 st.write("To know the Instructions click")
 st.page_link("pages/2_📑_instructions.py",label="Instructions",icon="📑")
 # Get user input
-question = st.text_input("Enter Your Question:")
+question = st.text_input("Enter Your Question: \n NOTE: please enter one word since it's in training phase")
 question = question.upper()
         
 # Select custom font
