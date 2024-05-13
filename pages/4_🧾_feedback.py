@@ -4,7 +4,7 @@ import os
 
 st.set_page_config(
     page_title="Assignment_writer",
-    page_icon="🤖",
+    page_icon="📝",
     layout='wide'
 )
 
