@@ -161,7 +161,7 @@ def generate_pdf(question, answer, name, rno, sec, sub, assign_num, font_family=
 
 
 st.title("Assignment Writer App")
-st.info('Fill this form for Your front page details', icon="ℹ️")
+st.sidebar.info('Fill this form for Your front page details', icon="ℹ️")
 with st.sidebar.form("form1", clear_on_submit=True, border=True):
     name = st.text_input("Enter Your Name: ")
     rno = st.text_input("Enter Your Roll No: ")
