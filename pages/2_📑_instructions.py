@@ -8,8 +8,8 @@ st.set_page_config(
 st.title("INSTRUCTIONS !!")
 
 
-st.info("""\nInstructions to be Followed !\n
-                Read the Instructions correctly\n 
+st.info("""\nInstructions to be Followed !
+                \nRead the Instructions correctly\n 
                 Step 1: Enter the Question !\n
                 Step 2:Keep the Question clear and concise.\n
                 Step 3: Select Font and it\'s color\n
