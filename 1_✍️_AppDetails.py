@@ -12,7 +12,6 @@ st.set_page_config(
     primaryColor="#3744f7",
     backgroundColor="#0c1835",
     secondaryBackgroundColor="#052958",
-    font="monospace"
 )
 
 custom_css = """
