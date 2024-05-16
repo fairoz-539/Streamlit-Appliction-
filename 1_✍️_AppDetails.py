@@ -12,31 +12,31 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# custom_css = """
-# <style>
-# body {
-#     background-color: #0c1835;
-#     color: white;
-#     font-family: monospace;
-# }
-# .sidebar .sidebar-content {
-#     background-color: #052958;
-# }
-# .css-145kmo2 .element-container, .css-1aumxhk {
-#     background-color: #052958 !important;
-# }
-# .css-145kmo2 .stRadio div, .css-145kmo2 .stSelectbox div {
-#     color: white !important;
-# }
-# primaryColor="#3744f7"
-# backgroundColor="#0c1835"
-# secondaryBackgroundColor="#052958"
-# font="monospace"
-# </style>
-# """
+custom_css = """
+<style>
+body {
+    background-color: #3744f7;
+    color: white;
+    font-family: monospace;
+}
+.sidebar .sidebar-content {
+    background-color: #052958;
+}
+.css-145kmo2 .element-container, .css-1aumxhk {
+    background-color: #052958 !important;
+}
+.css-145kmo2 .stRadio div, .css-145kmo2 .stSelectbox div {
+    color: white !important;
+}
+primaryColor="#3744f7"
+backgroundColor="#0c1835"
+secondaryBackgroundColor="#052958"
+font="monospace"
+</style>
+"""
 
-# # Apply custom CSS
-# st.markdown(custom_css, unsafe_allow_html=True)
+# Apply custom CSS
+st.markdown(custom_css, unsafe_allow_html=True)
 
 hds= """<style>
     #MainMenu {visibility: hidden;}
