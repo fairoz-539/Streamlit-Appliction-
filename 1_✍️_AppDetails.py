@@ -57,6 +57,10 @@ hds= """<style>
       # -webkit-backdrop-filter: blur(12.1px);
       # border: 1px solid #FF00FF;
   }
+
+      .sidebar{
+          background-image: linear-gradient(to right, #0c1835,#052958);
+          opacity: 0.8;}
     </style>
 """
 st.markdown(hds, unsafe_allow_html=True)
