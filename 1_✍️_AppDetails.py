@@ -45,7 +45,7 @@ hds= """<style>
      background-image: linear-gradient(to right, #0c1835,#052958);
      opacity: 0.8;}
      
-     .stButton:hover {{
+     .Button:hover {
       color: #FFFFFF;
       # border-radius: 10%;
       # height: 3em;
@@ -56,7 +56,7 @@ hds= """<style>
       # backdrop-filter: blur(12.1px);
       # -webkit-backdrop-filter: blur(12.1px);
       # border: 1px solid #FF00FF;
-  }}
+  }
     </style>
 """
 st.markdown(hds, unsafe_allow_html=True)
