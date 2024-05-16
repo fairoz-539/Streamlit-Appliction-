@@ -22,7 +22,7 @@ hds= """<style>
     
     /* Custom sidebar text color */
     div[data-testid="stSidebarContent"] {
-        color: #052958; /* Text color */
+        background-color: #052958; /* Text color */
     }
     
     /* Custom input fields color */
