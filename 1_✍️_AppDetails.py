@@ -45,7 +45,7 @@ hds= """<style>
      background-image: linear-gradient(to right, #0c1835,#052958);
      opacity: 0.8;}
      
-     .stButton>button:hover {{
+     .stButton:hover {{
       color: #FFFFFF;
       # border-radius: 10%;
       # height: 3em;
