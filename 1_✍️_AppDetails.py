@@ -18,7 +18,8 @@ hds= """<style>
     footer {visibility : hidden;}
     .main {
      background-image: linear-gradient(to right, #0c1835,#052958);
-     opacity: 0.8;}
+     opacity: 0.8;
+     font-family:monospace}
     
     /* Custom sidebar text color */
     div[data-testid="stSidebarContent"] {
