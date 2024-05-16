@@ -21,6 +21,9 @@ hds= """<style>
      opacity: 0.8;
      font-family:ource Code Pro,Monospace!important;
     }
+    p{
+    font-family:monospace;
+    }
     
     /* Custom sidebar text color */
     div[data-testid="stSidebarContent"] {
