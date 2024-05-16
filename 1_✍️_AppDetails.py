@@ -39,7 +39,8 @@ st.set_page_config(
 # st.markdown(custom_css, unsafe_allow_html=True)
 
 hds= """<style>
-    #MainMenu {visibility: hidden;}
+    #MainMenu {background-image: linear-gradient(to right, #000000,#3c3c50);
+     opacity: 0.8;}
     footer {visibility : hidden;}
     [data-testid="stAppViewContainer"] > .main {{
      background-image: linear-gradient(to right, #000000,#3c3c50);
