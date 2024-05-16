@@ -19,7 +19,7 @@ hds= """<style>
     .main {
      background-image: linear-gradient(to right, #0c1835,#052958);
      opacity: 0.8;
-     font-family:Monospace!important;
+     font-family:ource Code Pro,Monospace!important;
     }
     
     /* Custom sidebar text color */
