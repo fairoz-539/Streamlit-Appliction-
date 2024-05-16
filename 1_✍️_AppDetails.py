@@ -12,31 +12,6 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# custom_css = """
-# <style>
-# body {
-#     background-color: #3744f7;
-#     color: white;
-#     font-family: monospace;
-# }
-# .sidebar .sidebar-content {
-#     background-color: #052958;
-# }
-# .css-145kmo2 .element-container, .css-1aumxhk {
-#     background-color: #052958 !important;
-# }
-# .css-145kmo2 .stRadio div, .css-145kmo2 .stSelectbox div {
-#     color: white !important;
-# }
-# primaryColor="#3744f7"
-# backgroundColor="#0c1835"
-# secondaryBackgroundColor="#052958"
-# font="monospace"
-# </style>
-# """
-
-# # Apply custom CSS
-# st.markdown(custom_css, unsafe_allow_html=True)
 
 hds= """<style>
     #MainMenu {}
@@ -45,22 +20,16 @@ hds= """<style>
      background-image: linear-gradient(to right, #0c1835,#052958);
      opacity: 0.8;}
      
-     .Button:hover {
-      color: #FFFFFF;
-      # border-radius: 10%;
-      # height: 3em;
-      # width: 6em;
-      # background:	#6528F7;
-      # border-radius: 16px;
-      # box-shadow: 0 4px 30px #000000;
-      # backdrop-filter: blur(12.1px);
-      # -webkit-backdrop-filter: blur(12.1px);
-      # border: 1px solid #FF00FF;
-  }
-
-      .sidebar{
-          background-image: linear-gradient(to right, #0c1835,#052958);
-          opacity: 0.8;}
+     .sidebar-content {
+      background-image: linear-gradient(to right, #0c1835, #052958);
+      opacity: 0.8;
+     }
+    
+     /* Custom input fields color */
+      input[type="text"], input[type="number"], input[type="email"], input[type="password"], textarea, select {
+        background-color: rgba(12, 24, 53, 0.8);
+        color: #fff; /* Text color */
+      }
     </style>
 """
 st.markdown(hds, unsafe_allow_html=True)
