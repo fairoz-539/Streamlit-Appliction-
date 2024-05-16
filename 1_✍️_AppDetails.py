@@ -25,6 +25,7 @@ hds= """<style>
     /* Custom sidebar text color */
     div[data-testid="stSidebarContent"] {
         background-color: #052958; /* Text color */
+        font-family: Monospace !important;
     }
     div[data-testid="stSidebarNavSeperator"] {
         background-color: #052958; /* Text color */
