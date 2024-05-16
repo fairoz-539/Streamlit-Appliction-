@@ -19,26 +19,14 @@ hds= """<style>
     .main {
      background-image: linear-gradient(to right, #0c1835,#052958);
      opacity: 0.8;}
-     
-     /* Custom sidebar background */
-    .sidebar-content {
-        background-image: linear-gradient(to right, #0c1835, #052958);
-        opacity: 0.8;
-    }
     
     /* Custom sidebar text color */
-    div[data-testid="stSidebar"] div div div div div div div {
-        color: #ffffff; /* Text color */
+    div[data-testid="stSidebarContent"] {
+        color: #052958; /* Text color */
     }
     
     /* Custom input fields color */
     input[type="text"], input[type="number"], input[type="email"], input[type="password"], textarea, select {
-        background-color: rgba(12, 24, 53, 0.8);
-        color: #ffffff; /* Text color */
-    }
-    
-    /* Custom selectbox background color */
-    div[data-baseweb="select"] div div {
         background-color: rgba(12, 24, 53, 0.8);
         color: #ffffff; /* Text color */
     }
