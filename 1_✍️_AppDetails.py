@@ -43,7 +43,7 @@ hds= """<style>
     footer {visibility : hidden;}
     [data-testid="stAppViewContainer"] > .main {{
      background-image: linear-gradient(to right, #000000,#3c3c50);
-     opacity: 0.8;
+     opacity: 0.8;}}
     </style>
 """
 st.markdown(hds, unsafe_allow_html=True)
