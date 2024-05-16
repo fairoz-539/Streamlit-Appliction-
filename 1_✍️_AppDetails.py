@@ -35,7 +35,7 @@ hds= """<style>
     
     /* Custom input fields color */
     input[type="text"], input[type="number"], input[type="email"], input[type="password"], textarea, select {
-        background-color: rgba(12, 24, 53, 0.8);
+        background-color: #052958;
         color: #ffffff; /* Text color */
     }
 
