@@ -24,6 +24,9 @@ hds= """<style>
     div[data-testid="stSidebarContent"] {
         background-color: #052958; /* Text color */
     }
+    div[data-testid="stSidebarNavSeperator"] {
+        background-color: #052958; /* Text color */
+    }
     
     /* Custom input fields color */
     input[type="text"], input[type="number"], input[type="email"], input[type="password"], textarea, select {
