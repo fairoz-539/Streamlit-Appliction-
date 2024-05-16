@@ -42,7 +42,7 @@ hds= """<style>
     #MainMenu {}
     footer {visibility : hidden;}
     .main {
-     background-image: linear-gradient(to right, #000000,#3c3c50);
+     background-image: linear-gradient(to right, #0c1835,#052958);
      opacity: 0.8;}
     </style>
 """
