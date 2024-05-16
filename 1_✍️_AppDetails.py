@@ -20,7 +20,7 @@ hds= """<style>
      background-image: linear-gradient(to right, #0c1835,#052958);
      opacity: 0.8;}
      
-     .sidebar-content {
+     .sidebar{
       background-image: linear-gradient(to right, #0c1835, #052958);
       opacity: 0.8;
      }
