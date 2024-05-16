@@ -6,7 +6,7 @@ from streamlit.errors import StreamlitAPIException
 import time
 
 st.set_page_config(
-    page_title="Assignment_writer",
+    page_title="Assignment_writer App",
     page_icon="📝",
     layout='wide',
     initial_sidebar_state="expanded",
