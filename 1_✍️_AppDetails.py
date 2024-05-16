@@ -19,7 +19,8 @@ hds= """<style>
     .main {
      background-image: linear-gradient(to right, #0c1835,#052958);
      opacity: 0.8;
-     font-family:monospace}
+     font-family:Monospace
+    }
     
     /* Custom sidebar text color */
     div[data-testid="stSidebarContent"] {
