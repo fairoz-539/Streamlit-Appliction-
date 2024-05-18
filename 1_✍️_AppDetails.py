@@ -472,7 +472,6 @@ if btn:
             st.success("Form submitted successfully!")
 st.warning("Please fill the front details if not filled. Navigate to sidebar and fill the form.",icon="ℹ️")
 
-st.write("NOTE: please enter one word since it's in training phase")
 
 if "question" not in st.session_state:
     st.session_state.question = ""
@@ -486,7 +485,7 @@ if "Answer" not in st.session_state:
     st.session_state.Answer = None
 
 # Get user input
-st.session_state.question = st.text_input("Enter Your Question:", value=st.session_state.question).upper()
+st.session_state.question = st.text_input("Enter Your Question:(NOTE: please enter one word since it's in training phase)", value=st.session_state.question).upper()
         
 # Select custom font
 font_options = [
