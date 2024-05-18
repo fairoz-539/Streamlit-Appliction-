@@ -166,6 +166,39 @@ def generate_pdf(question, answer, name, rno, sec, sub, assign_num, font_family=
         raise e
 
 
+
+
+def run_pdf():
+    latest_iteration = st.empty()
+    bar = st.progress(0)
+    for i in range(100):
+        # Update the progress bar with each iteration.
+        latest_iteration.text(f'Generating PDF ....')
+        bar.progress(i + 1)
+        time.sleep(0.2)
+    latest_iteration.text(f'Done')
+                
+    answer = generate_answer(question)
+    if answer:
+        try:
+            pdf_file_path = generate_pdf(question, answer, name, rno,sec, sub, assign_num, font_family)
+            if pdf_file_path:
+                st.success("PDF generated successfully!")
+                with open(pdf_file_path, "rb") as f:
+                    pdf_contents = f.read()
+                    base64_pdf = base64.b64encode(pdf_contents).decode("utf-8")
+                
+                    # Display download link
+                    download_link = f'<a href="data:application/pdf;base64,{base64_pdf}" download="Output.pdf">Download PDF</a>'
+                    st.markdown(download_link, unsafe_allow_html=True)
+                    st.balloons()
+        except Exception as e:
+            st.error("Error generating PDF: {}".format(e))
+    else:
+        st.error("Error generating PDF.")
+
+
+
 st.title("Assignment Writer App")
 st.sidebar.info('Fill this form for Your front page details', icon="ℹ️")
 with st.sidebar.form("form1", clear_on_submit=True, border=True):
@@ -233,33 +266,7 @@ if st.button("Generate Answer"):
         
     # Generate PDF when button is clicked
         if st.button("Generate PDF"):
-            latest_iteration = st.empty()
-            bar = st.progress(0)
-            for i in range(100):
-                # Update the progress bar with each iteration.
-                latest_iteration.text(f'Generating PDF ....')
-                bar.progress(i + 1)
-                time.sleep(0.2)
-            latest_iteration.text(f'Done')
-                
-            answer = generate_answer(question)
-            if answer:
-                try:
-                    pdf_file_path = generate_pdf(question, answer, name, rno,sec, sub, assign_num, font_family)
-                    if pdf_file_path:
-                        st.success("PDF generated successfully!")
-                        with open(pdf_file_path, "rb") as f:
-                            pdf_contents = f.read()
-                            base64_pdf = base64.b64encode(pdf_contents).decode("utf-8")
-                
-                        # Display download link
-                        download_link = f'<a href="data:application/pdf;base64,{base64_pdf}" download="Output.pdf">Download PDF</a>'
-                        st.markdown(download_link, unsafe_allow_html=True)
-                        st.balloons()
-                except Exception as e:
-                    st.error("Error generating PDF: {}".format(e))
-            else:
-                st.error("Error generating PDF.")
+            run_pdf()
         
 st.write("To Give feedback click the below option !")
 st.page_link("pages/4_🧾_feedback.py",label="Give Feedback",icon="🧾")
