@@ -240,7 +240,7 @@ if gen_answer or st.session_state.Gen_Ans:
         
     # Generate PDF when button is clicked
     if st.button("Generate PDF"):
-        st.session_state.Gen_Ans = True
+        st.session_state.Gen_Ans = False
         latest_iteration = st.empty()
         bar = st.progress(0)
         for i in range(100):
