@@ -207,13 +207,8 @@ with col2:
 
 gen_answer=st.button("Generate Answer")     
 
-if "Gen_Ans" not in st.session_state:
-    st.session_state.Gen_Ans = False
-
-
 # Generate answer when button is clicked
-if gen_answer or st.session_state.Gen_Ans:
-    st.session_state.Gen_Ans = True
+if gen_answer:
     # Add a placeholder
     latest_iteration = st.empty()
     bar = st.progress(0)
