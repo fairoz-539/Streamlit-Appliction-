@@ -530,7 +530,7 @@ if st.session_state.Gen_Ans and st.session_state.Answer:
     #     st.title(st.session_state.question)
     #     st.write(answer)
         # Display answer in HTML format
-        st.markdown(
+    st.markdown(
             f"<h1 style='font-family:{st.session_state.font_family};'>{st.session_state.question}</h1><p style='font-family:{st.session_state.font_family}'>{answer}</p>",
             unsafe_allow_html=True)
     st.balloons()
