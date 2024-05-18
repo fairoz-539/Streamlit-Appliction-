@@ -329,7 +329,7 @@ hds = """<style>
     
     /* Custom input fields color */
     input[type="text"], input[type="number"], input[type="email"], input[type="password"], textarea, select {
-        background-color: #0c1835;
+        background-color: #062651;
         color: #ffffff; /* Text color */
     }
 
