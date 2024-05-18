@@ -236,11 +236,16 @@ if gen_answer or st.session_state.Gen_Ans:
         st.markdown(
             f"<h1 style='font-family:{font_family};'>{question}</h1><p style='font-family:{font_family}'>{answer}</p>",
             unsafe_allow_html=True)
+    if answer:
         st.balloons()
-        
+
+        gen_pdf=st.button("Generate PDF")     
+    
+        if "Gen_PDF" not in st.session_state:
+            st.session_state.Gen_PDF = False
     # Generate PDF when button is clicked
-    if st.button("Generate PDF"):
-        st.session_state.Gen_Ans = False
+    if gen_pdf or st.session_state.Gen_PDF:
+        st.session_state.Gen_PDF = False
         latest_iteration = st.empty()
         bar = st.progress(0)
         for i in range(100):
