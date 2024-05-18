@@ -467,7 +467,7 @@ with st.sidebar.form("form1", clear_on_submit=True, border=True):
 
 if btn:
     if not name or not rno or not sub or not assign_num:
-        st.error("Please fill out all required fields!")
+        st.sidebar.error("Please fill out all required fields!")
     else:
         with open("form_values.txt", "w") as file:
             st.success("Form submitted successfully!")
