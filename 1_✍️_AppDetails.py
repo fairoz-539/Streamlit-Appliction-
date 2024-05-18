@@ -470,7 +470,7 @@ if btn:
     else:
         with open("form_values.txt", "w") as file:
             st.success("Form submitted successfully!")
-st.warning("Please fill the front details if not filled. Navigate to sidebar and fill the form.")
+st.warning("Please fill the front details if not filled. Navigate to sidebar and fill the form.",icon="ℹ️")
 
 st.write("NOTE: please enter one word since it's in training phase")
 
