@@ -525,12 +525,10 @@ if gen_answer:
 
 if st.session_state.Gen_Ans and st.session_state.Answer:
     answer = st.session_state.Answer
-    col3 = st.columns(1)
 
     # with col3:
     #     st.title(st.session_state.question)
     #     st.write(answer)
-    with col3:
         # Display answer in HTML format
         st.markdown(
             f"<h1 style='font-family:{st.session_state.font_family};'>{st.session_state.question}</h1><p style='font-family:{st.session_state.font_family}'>{answer}</p>",
