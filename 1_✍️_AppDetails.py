@@ -207,8 +207,11 @@ with col2:
 
 gen_answer=st.button("Generate Answer")     
 
+if "Gen_Ans" not in st.session_state:
+    st.session_state.Gen_Ans = False
 # Generate answer when button is clicked
 if gen_answer:
+    st.session_state.Gen_Ans = True
     # Add a placeholder
     latest_iteration = st.empty()
     bar = st.progress(0)
@@ -241,6 +244,7 @@ if gen_answer:
     # Generate PDF when button is clicked
     if gen_pdf or st.session_state.Gen_PDF:
         st.session_state.Gen_PDF = True
+        st.session_state.Gen_Ans = False
         latest_iteration = st.empty()
         bar = st.progress(0)
         for i in range(100):
