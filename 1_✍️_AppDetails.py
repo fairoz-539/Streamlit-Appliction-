@@ -204,9 +204,16 @@ with col1:
     heading_color = st.selectbox("select Header Color:", ["#393b3d", "blue"])
 with col2:
     text_color = st.selectbox("Select Font Color:", ["#307bd1", "#393b3d"])
-        
+
+gen_answer=st.button("Generate Answer")     
+
+if "Gen_Ans" not in st.session_state:
+    st.session_state.Gen_Ans = False
+
+
 # Generate answer when button is clicked
-if st.button("Generate Answer"):
+if gen_answer or st.session_state.Gen_Ans:
+    st.session_state.Gen_Ans = True
     # Add a placeholder
     latest_iteration = st.empty()
     bar = st.progress(0)
