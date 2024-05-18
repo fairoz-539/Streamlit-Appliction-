@@ -5,6 +5,41 @@ st.set_page_config(
     page_icon="📝",
 )
 
+
+hds = """<style>
+    #MainMenu {}
+    footer {visibility : hidden;}
+    .main {
+     background-image: linear-gradient(to right, #0c1835,#052958);
+     opacity: 0.8;
+    }
+    p,h1{
+    font-family:Source Code Pro,monospace;
+    }
+    
+    /* Custom sidebar text color */
+    div[data-testid="stSidebarContent"] {
+        background-color: #052958; /* Text color */
+        font-family: Monospace !important;
+    }
+    div[data-testid="stSidebarNavSeperator"] {
+        background-color: #052958; /* Text color */
+    }
+    span{
+     font-family: Source Code Pro,monospace;
+     }
+    
+    /* Custom input fields color */
+    input[type="text"], input[type="number"], input[type="email"], input[type="password"], textarea, select, .st-aw{
+        background-color: #0c1835;
+        color: #ffffff; /* Text color */
+    }
+
+    </style>
+"""
+st.markdown(hds, unsafe_allow_html=True)
+
+
 st.title("INSTRUCTIONS !!")
 
 
