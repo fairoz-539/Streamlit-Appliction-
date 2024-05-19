@@ -216,7 +216,7 @@ def generate_pdf(question, answer, name, rno, sec, sub, assign_num, font_family=
 
 # Main app function
 def main_app():
-    st.title("Assignment Writer App")
+    # st.title("Assignment Writer App")
     st.sidebar.info('Fill this form for Your front page details', icon="ℹ️")
     with st.sidebar.form("form1", clear_on_submit=True, border=True):
         name = st.text_input("Enter Your Name: ")
