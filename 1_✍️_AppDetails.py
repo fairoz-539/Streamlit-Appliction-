@@ -346,7 +346,7 @@ def main():
 
     if st.session_state.logged_in:
         main_app()
-        if st.button("Logout"):
+        if st.sidebar.button("Logout"):
             st.session_state.logged_in = False
             st.session_state.username = None
             st.session_state.profile_pic = None
