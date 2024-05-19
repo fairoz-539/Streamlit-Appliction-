@@ -82,6 +82,8 @@ if submitted:
         save_feedback_to_db(name, email, feedback_text)
         st.success("Feedback submitted successfully!")
 
+
+# if st.session_state.
 # Display feedback table
 st.subheader("Feedback Table")
 feedback_data = fetch_feedback_from_db()
