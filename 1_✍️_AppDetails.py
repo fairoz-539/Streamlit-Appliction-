@@ -339,7 +339,7 @@ def main_app():
 def main():
     create_user_table()
 
-    st.title("Assignment Writer App")
+    
 
     if "logged_in" not in st.session_state:
         st.session_state.logged_in = False
