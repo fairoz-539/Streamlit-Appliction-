@@ -339,22 +339,23 @@ def main_app():
 def main():
     create_user_table()
 
-    
+    st.title("Assignment writer")
 
     if "logged_in" not in st.session_state:
         st.session_state.logged_in = False
 
     if st.session_state.logged_in:
+        main_app()
         if st.button("Logout"):
             st.session_state.logged_in = False
             st.session_state.username = None
             st.session_state.profile_pic = None
             st.success("You have been logged out.")
         else:
-            st.write(f"Welcome {st.session_state['username']}!")
+            st.sidebar.write(f"Welcome {st.session_state['username']}!")
             if st.session_state.profile_pic:
-                st.image(st.session_state.profile_pic, width=100)
-            main_app()
+                st.sidebar.image(st.session_state.profile_pic, width=100)
+            
     else:
         menu = ["Login", "Sign Up"]
         choice = st.selectbox("Menu", menu)
@@ -404,8 +405,8 @@ def main():
                     @keyframes changeText {
                         0%, 35% { content: 'F'; }
                         35%, 50% { content: 'R'; }
-                        50%, 65% { content: 'Z'; }
-                        65%, 100% { content: 'FRZ-APP'; }
+                        50%, 60% { content: 'Z'; }
+                        60%, 100% { content: 'Frz'; }
                     }
                     .loader::before {
                         content: 'F';
