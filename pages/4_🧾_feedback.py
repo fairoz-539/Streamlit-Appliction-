@@ -89,8 +89,8 @@ if st.session_state.username == 'frz':
     feedback_data = fetch_feedback_from_db()
     if feedback_data:
         st.write("Here is the list of all feedback received:")
-        st.write("| Name | Email | Feedback |")
-        st.write("| ---- | ----- | -------- |")
+        st.write("|    Name   |    Email    |    Feedback    |")
+        st.write("|    ----   |    -----    |    --------    |")
         for row in feedback_data:
             st.write(f"| {row[1]} | {row[2]} | {row[3]} |")
     else:
