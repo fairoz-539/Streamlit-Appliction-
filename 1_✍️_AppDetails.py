@@ -291,7 +291,7 @@ def main_app():
             # Display answer in HTML format
         st.markdown(
                 # f"<h1 style='font-family:{st.session_state.font_family};'>{st.session_state.question}</h1>
-                <p style='font-family:{st.session_state.font_family}'>{answer}</p>",
+                f"<p style='font-family:{st.session_state.font_family}'>{answer}</p>",
                 unsafe_allow_html=True)
         st.balloons()
 
