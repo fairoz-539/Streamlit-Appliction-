@@ -56,7 +56,6 @@ st.markdown(
     .stSidebar > a:first-child:before {{
         content: "\\2630";
         font-size: 1.5rem;
-        color: {st.theme().primary_color};
     }}
     </style>
     """,
