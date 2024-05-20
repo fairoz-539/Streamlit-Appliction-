@@ -50,18 +50,31 @@ hds = """<style>
 st.markdown(hds, unsafe_allow_html=True)
 
 
-st.markdown(
-    f"""
+
+# Import the Streamlit custom CSS
+from streamlit import delta_generator as st_delta_generator
+from streamlit.delta_generator import DeltaGenerator as st_delta
+from streamlit.script_run_context import get_script_run_ctx
+
+# Get the current Streamlit script run context
+script_run_ctx = get_script_run_ctx()
+
+# Get the current DeltaGenerator instance
+dg = script_run_ctx.delta_generator
+
+# Add custom CSS
+dg.add_css(f"""
+    /* Change sidebar arrow to hamburger icon */
     <style>
-    .st-emotion-cache-1pbsqtx:before {{
-        content: "\\2630";
-        font-size: 1.5rem;
+    .st-sidebar-menu-arrow {{
+        width: 1.5rem;
+        height: 1.5rem;
+        mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='currentColor' d='M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z' /></svg>") no-repeat 50% 50%;
+        mask-size: cover;
+        background-color: var(--sidebar-icon-color);
     }}
     </style>
-    """,
-    unsafe_allow_html=True,
-)
-
+""")
 
 
 # Create profile pictures directory if it doesn't exist
@@ -251,7 +264,7 @@ def main_app():
         else:
             with open("form_values.txt", "w") as file:
                 st.sidebar.success("Form submitted successfully!")
-    st.subheader("Welcome ,", st.session_state.username)
+    st.subheader("Welcome ,"st.session_state.username)
     st.write("\n\n\n\n\n")
     st.warning("Please fill the front details if not filled. Navigate to sidebar and fill the form.",icon="ℹ️")
 
