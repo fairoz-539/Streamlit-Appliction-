@@ -256,7 +256,7 @@ def main_app():
             
     # Select custom font
     font_options = [
-        'Arial', 'Times New Roman', 'Courier New', 'Verdana',
+        'Source Code Pro,monospace','Arial', 'Times New Roman', 'Courier New', 'Verdana',
         'Helvetica', 'Georgia', 'Comic Sans MS', 'Impact', 'Tahoma',
         'Brush Script MT', 'Lucida Handwriting', 'Papyrus', 'Segoe Script'
         # Add more fonts as needed
