@@ -264,7 +264,7 @@ def main_app():
         else:
             with open("form_values.txt", "w") as file:
                 st.sidebar.success("Form submitted successfully!")
-    st.subheader("Welcome ,"st.session_state.username)
+    st.subheader(f"Usename: {st.session_state['username']}")
     st.write("\n\n\n\n\n")
     st.warning("Please fill the front details if not filled. Navigate to sidebar and fill the form.",icon="ℹ️")
 
