@@ -51,31 +51,6 @@ st.markdown(hds, unsafe_allow_html=True)
 
 
 
-# Import the Streamlit custom CSS
-from streamlit import delta_generator as st_delta_generator
-from streamlit.delta_generator import DeltaGenerator as st_delta
-from streamlit.script_run_context import get_script_run_ctx
-
-# Get the current Streamlit script run context
-script_run_ctx = get_script_run_ctx()
-
-# Get the current DeltaGenerator instance
-dg = script_run_ctx.delta_generator
-
-# Add custom CSS
-dg.add_css(f"""
-    /* Change sidebar arrow to hamburger icon */
-    <style>
-    .st-sidebar-menu-arrow {{
-        width: 1.5rem;
-        height: 1.5rem;
-        mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='currentColor' d='M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z' /></svg>") no-repeat 50% 50%;
-        mask-size: cover;
-        background-color: var(--sidebar-icon-color);
-    }}
-    </style>
-""")
-
 
 # Create profile pictures directory if it doesn't exist
 if not os.path.exists("profile_pics"):
