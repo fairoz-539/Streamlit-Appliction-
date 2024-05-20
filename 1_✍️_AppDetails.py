@@ -239,8 +239,8 @@ def main_app():
         else:
             with open("form_values.txt", "w") as file:
                 st.sidebar.success("Form submitted successfully!")
-    st.subheader(f"Usename: {st.session_state['username']}")
-    st.write("\n\n\n\n\n")
+    st.subheader(f"Welcome, {st.session_state['username']}")
+    st.write("\n\n\n\n\n\n\n\n\n")
     st.warning("Please fill the front details if not filled. Navigate to sidebar and fill the form.",icon="ℹ️")
 
 
@@ -255,8 +255,9 @@ def main_app():
     if "Answer" not in st.session_state:
         st.session_state.Answer = None
 
+    st.write("\n\n\n\n\n\n\n\n\n")
     # Get user input
-    st.session_state.question = st.text_input("Enter Your Question:(NOTE: please enter one word since it's in training phase)", value=st.session_state.question).upper()
+    st.session_state.question = st.text_input("Enter Your Question:", value=st.session_state.question)
             
     # Select custom font
     font_options = [
@@ -265,9 +266,11 @@ def main_app():
         'Brush Script MT', 'Lucida Handwriting', 'Papyrus', 'Segoe Script'
         # Add more fonts as needed
     ]
+    st.write("\n\n\n\n\n")
     st.session_state.font_family = st.selectbox("Select Font Family:", font_options, index=font_options.index(st.session_state.font_family), disabled=True)
     
     # Button to generate the answer
+    st.write("\n\n\n\n\n")
     gen_answer = st.button("Generate Answer")
 
     # Generate answer when the button is clicked
@@ -300,6 +303,7 @@ def main_app():
                 unsafe_allow_html=True)
         st.balloons()
 
+        st.write("\n\n\n\n\n\n")
         gen_pdf = st.button("Generate PDF")
 
         if gen_pdf:
@@ -333,10 +337,10 @@ def main_app():
         else:
             st.error("Error generating PDF.")
 
-    st.write("\n\n")
+    st.write("\n\n\n\n\n")
     st.write("To Give feedback click the below option !")
     st.page_link("pages/4_🧾_feedback.py", label="Give Feedback", icon="🧾")
-    st.write("\n\n\n\n")
+    st.write("\n\n\n\n\n\n\n\n\n")
     st.info("""Our application is still in training phase, so it may encounter occasional errors or inaccuracies.
         We value your feedback to help improve and refine its performance. Please take a moment to share your thoughts by navigating to the feedback section in the sidebar. Your input is greatly appreciated!""")
     st.markdown(
