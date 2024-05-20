@@ -50,6 +50,21 @@ hds = """<style>
 st.markdown(hds, unsafe_allow_html=True)
 
 
+st.markdown(
+    f"""
+    <style>
+    .stSidebar > a:first-child:before {{
+        content: "\\2630";
+        font-size: 1.5rem;
+        color: {st.theme().primary_color};
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
+
+
 # Create profile pictures directory if it doesn't exist
 if not os.path.exists("profile_pics"):
     os.makedirs("profile_pics")
