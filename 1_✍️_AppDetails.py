@@ -53,7 +53,7 @@ st.markdown(hds, unsafe_allow_html=True)
 st.markdown(
     f"""
     <style>
-    .stSidebar > a:first-child:before {{
+    .st-emotion-cache-1pbsqtx:before {{
         content: "\\2630";
         font-size: 1.5rem;
     }}
@@ -251,7 +251,7 @@ def main_app():
         else:
             with open("form_values.txt", "w") as file:
                 st.sidebar.success("Form submitted successfully!")
-    st.subheader(st.session_state.username)
+    st.subheader("Welcome ,", st.session_state.username)
     st.write("\n\n\n\n\n")
     st.warning("Please fill the front details if not filled. Navigate to sidebar and fill the form.",icon="ℹ️")
 
