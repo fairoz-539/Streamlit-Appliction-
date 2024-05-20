@@ -329,11 +329,30 @@ def main_app():
         else:
             st.error("Error generating PDF.")
 
+    st.write("\n\n")
     st.write("To Give feedback click the below option !")
     st.page_link("pages/4_🧾_feedback.py", label="Give Feedback", icon="🧾")
+    st.write("\n\n\n\n")
     st.info("""Our application is still in training phase, so it may encounter occasional errors or inaccuracies.
         We value your feedback to help improve and refine its performance. Please take a moment to share your thoughts by navigating to the feedback section in the sidebar. Your input is greatly appreciated!""")
-
+    st.markdown(
+        """
+        <style>
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #052958;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-family: Arial, sans-serif;
+        }
+        </style>
+        """, unsafe_allow_html=True
+    )
+    st.markdown('<div class="footer">Digital Assignmennt Writer App - frz</div>', unsafe_allow_html=True)
 # Main function
 def main():
     create_user_table()
@@ -448,6 +467,25 @@ def main():
                 except sqlite3.IntegrityError:
                     st.error("Username already exists")
 
+  
+    st.markdown(
+        """
+        <style>
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #052958;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-family: Arial, sans-serif;
+        }
+        </style>
+        """, unsafe_allow_html=True
+    )
+    st.markdown('<div class="footer">Digital Assignmennt Writer App - frz</div>', unsafe_allow_html=True)
 if __name__ == '__main__':
     main()
 
