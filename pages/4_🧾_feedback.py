@@ -9,7 +9,7 @@ st.set_page_config(
 
 
 hds = """<style>
-    #MainMenu {}
+    #MainMenu {visibility: hidden;}
     footer {visibility : hidden;}
     .main {
      background-image: linear-gradient(to right, #0c1835,#052958);
