@@ -3,4 +3,3 @@ pdfkit==1.0.0
 wkhtmltopdf==0.1
 xhtml2pdf
 cohere
-request
