@@ -110,7 +110,7 @@ def generate_answer(question):
         return st.error("Error generating answer: {}".format(e))
 
 
-def generate_pdf(question, answer, name, rno, sec, sub, assign_num, font_family="Arial", heading_color="#393b3d", text_color="#307bd1"):
+def generate_pdf(question, answer, name, rno, sec, sub, assign_num, font_family="Arial"):
     try:
         # Create a PDF document
         pdf_data = f"""
@@ -195,8 +195,8 @@ def generate_pdf(question, answer, name, rno, sec, sub, assign_num, font_family=
                 </div>
             </div>
             <div class="assignment-start">
-                <p style="padding-top: 80px;text-align:center;font-size:28px;"><strong>{question}</strong></p>
-                <p>{answer}</p>
+                <p style="padding-top: 80px;text-align:center;font-size:28px;font-family:{font_family}"><strong>{question}</strong></p>
+                <p style="font-family:{font_family};">{answer}</p>
             </div>
         </body>
         </html>
@@ -257,14 +257,7 @@ def main_app():
         # Add more fonts as needed
     ]
     st.session_state.font_family = st.selectbox("Select Font Family:", font_options, index=font_options.index(st.session_state.font_family))
-            
-    col1, col2 = st.columns(2)
-            
-    with col1:
-        heading_color = st.selectbox("select Header Color:", ["#393b3d", "blue"])
-    with col2:
-        text_color = st.selectbox("Select Font Color:", ["#307bd1", "#393b3d"])
-
+    
     # Button to generate the answer
     gen_answer = st.button("Generate Answer")
 
