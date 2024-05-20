@@ -1,4 +1,5 @@
 import streamlit as st
+import cohere
 import sqlite3
 import os
 import time
