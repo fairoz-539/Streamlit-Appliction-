@@ -372,7 +372,7 @@ def main():
             st.session_state.profile_pic = None
             st.success("You have been logged out.")
         else:
-            st.sidebar.write(f"Usename: {st.session_state['username']}!")
+            st.sidebar.write(f"Usename: {st.session_state['username']}")
             if st.session_state.profile_pic:
                 st.sidebar.image(st.session_state.profile_pic, width=100)
             
