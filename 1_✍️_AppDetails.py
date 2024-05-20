@@ -15,6 +15,10 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
+api_key = st.secrets["cohere"]["api_key"]
+
+# Initialize Cohere client
+co = cohere.Client(api_key=api_key)
 
 hds = """<style>
     #MainMenu {}
@@ -97,17 +101,17 @@ def fetch_feedback_from_db():
 
 def generate_answer(question):
     try:
-        # Get answer from Wikipedia
-        answer = wk.summary(question)
+        if question:
+            stream = co.chat_stream(message=question)
+            answer = ""
+            for event in stream:
+                if event.event_type == "text-generation":
+                    answer += event.text
+        else:
+            st.warning("Please enter a question.")
         return answer
-    except wk.exceptions.DisambiguationError as e:
-        return st.error("Error generating answer: {}".format(e))
-    except wk.exceptions.PageError as e:
-        return st.error("Error generating answer: {}".format(e))
-    except wk.exceptions.WikipediaException:
-        st.warning("Error generating answer: Wikipedia search parameter is not set. No match for an empty query.")
     except Exception as e:
-        return st.error("Error generating answer: {}".format(e))
+        st.error("Error generating answer: {}".format(e))
 
 
 def generate_pdf(question, answer, name, rno, sec, sub, assign_num, font_family="Arial"):
@@ -286,7 +290,8 @@ def main_app():
         #     st.write(answer)
             # Display answer in HTML format
         st.markdown(
-                f"<h1 style='font-family:{st.session_state.font_family};'>{st.session_state.question}</h1><p style='font-family:{st.session_state.font_family}'>{answer}</p>",
+                # f"<h1 style='font-family:{st.session_state.font_family};'>{st.session_state.question}</h1>
+                <p style='font-family:{st.session_state.font_family}'>{answer}</p>",
                 unsafe_allow_html=True)
         st.balloons()
 
