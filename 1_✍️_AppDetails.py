@@ -115,7 +115,7 @@ def generate_answer(question):
         st.error("Error generating answer: {}".format(e))
 
 
-def generate_pdf(question, answer, name, rno, sec, sub, assign_num, font_family="Arial"):
+def generate_pdf(question, answer, name, rno, sec, sub, assign_num, font_family="Source Code Pro,monospace"):
     try:
         # Create a PDF document
         pdf_data = f"""
@@ -243,7 +243,7 @@ def main_app():
     if "question" not in st.session_state:
         st.session_state.question = ""
     if "font_family" not in st.session_state:
-        st.session_state.font_family = 'Arial'
+        st.session_state.font_family = 'Source Code Pro,monospace'
     if "Gen_Ans" not in st.session_state:
         st.session_state.Gen_Ans = False
     if "Gen_PDF" not in st.session_state:
