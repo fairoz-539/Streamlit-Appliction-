@@ -256,7 +256,7 @@ def main_app():
         'Brush Script MT', 'Lucida Handwriting', 'Papyrus', 'Segoe Script'
         # Add more fonts as needed
     ]
-    st.session_state.font_family = st.selectbox("Select Font Family:", font_options, index=font_options.index(st.session_state.font_family))
+    st.session_state.font_family = st.selectbox("Select Font Family:", font_options, index=font_options.index(st.session_state.font_family), disabled=True)
     
     # Button to generate the answer
     gen_answer = st.button("Generate Answer")
