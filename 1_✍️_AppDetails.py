@@ -356,7 +356,7 @@ def main_app():
             color: white;
             text-align: center;
             padding: 10px 0;
-            font-family: Arial, sans-serif;
+            font-family: Souce san pro, monospace;
         }
         </style>
         """, unsafe_allow_html=True
@@ -518,7 +518,7 @@ def main():
             color: white;
             text-align: center;
             padding: 10px 0;
-            font-family: Arial, sans-serif;
+            font-family: Souce san pro, monospace;
         }
         </style>
         """, unsafe_allow_html=True
