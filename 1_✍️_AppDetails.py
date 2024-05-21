@@ -383,7 +383,7 @@ def main():
         @keyframes typing {
           from { width: 0 }
           to { width: 100% }
-        }''',unsafe_allow_html)
+        }''',unsafe_allow_html=True)
     if "logged_in" not in st.session_state:
         st.session_state.logged_in = False
 
