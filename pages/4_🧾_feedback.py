@@ -73,7 +73,7 @@ def fetch_feedback_from_users_db():
 def delete_from_users_db():
     conn = sqlite3.connect("users.db")
     c = conn.curor()
-    c.execute("DELETE * from users where username="")
+    c.execute("DELETE * from users where username=""")
     conn.close()
     return users_data
 
