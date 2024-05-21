@@ -366,7 +366,33 @@ def main_app():
 def main():
     create_user_table()
 
-    st.title("Assignment writer")
+    # st.title("Assignment writer")
+    st.markdown(
+        '<div class="container"><div class="typed-out">ASSIGNMENT WRITER</div></div>',
+        unsafe_allow_html=True
+    )
+    st.markdown(
+        """
+        <style>
+        .container {
+            display: inline-block;
+        }
+        .typed-out {
+            overflow: hidden;
+            border-right: 0.15em solid orange;
+            white-space: nowrap;
+            animation: typing 0.4s steps(8, end) forwards infinite;
+            font-size: 1.6rem;
+            width: 0;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
     
     if "logged_in" not in st.session_state:
         st.session_state.logged_in = False
