@@ -241,7 +241,7 @@ def main_app():
                 st.sidebar.success("Form submitted successfully!")
     st.subheader(f"Welcome, {st.session_state['username']}")
     st.write("\n\n\n\n\n\n\n\n\n")
-    st.warning("Please fill the front details if not filled. Navigate to sidebar and fill the form.",icon="ℹ️")
+    st.warning("Please fill the front details if not filled.Navigate to sidebar and fill the form. \nTo Navigate Sidebar click the ➡️ in the top left corner.",icon="ℹ️")
 
 
     if "question" not in st.session_state:
