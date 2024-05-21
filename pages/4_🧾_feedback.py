@@ -70,6 +70,13 @@ def fetch_feedback_from_users_db():
     return users_data
 
 
+def delete_from_users_db():
+    conn = sqlite3.connect("users.db")
+    c = conn.curor()
+    c.execute("DELETE * from users where username="")
+    conn.close()
+    return users_data
+
 
 # Streamlit UI
 st.title("Feedback Submission")
@@ -91,6 +98,11 @@ if submitted:
         # Save feedback to SQLite3 database
         save_feedback_to_db(name, email, feedback_text)
         st.success("Feedback submitted successfully!")
+
+if st.session_state.username == 'ZORUNA':
+    if st.button("Delete"):
+        delete_from_users_db()
+
 
 with st.expander("Feedback Data", expanded=True):
     if st.session_state.username == 'ZORUNA':
