@@ -92,30 +92,31 @@ if submitted:
         save_feedback_to_db(name, email, feedback_text)
         st.success("Feedback submitted successfully!")
 
+with st.expander("Feedback Data", expanded=True):
+    if st.session_state.username == 'frz':
+        # Display feedback table
+        st.subheader("Feedback Table")
+        feedback_data = fetch_feedback_from_db()
+        if feedback_data:
+            st.write("Here is the list of all feedback received:")
+            st.write("|    Name   |    Email    |    Feedback    |")
+            st.write("|    ----   |    -----    |    --------    |")
+            for row in feedback_data:
+                st.write(f"| {row[1]} | {row[2]} | {row[3]} |")
+        else:
+            st.write("No feedback received yet.")
 
-if st.session_state.username == 'frz':
-    # Display feedback table
-    st.subheader("Feedback Table")
-    feedback_data = fetch_feedback_from_db()
-    if feedback_data:
-        st.write("Here is the list of all feedback received:")
-        st.write("|    Name   |    Email    |    Feedback    |")
-        st.write("|    ----   |    -----    |    --------    |")
-        for row in feedback_data:
-            st.write(f"| {row[1]} | {row[2]} | {row[3]} |")
-    else:
-        st.write("No feedback received yet.")
 
-
-if st.session_state.username == 'frz':
-    # Display feedback table
-    st.subheader("Users Table")
-    users_data = fetch_feedback_from_users_db()
-    if users_data:
-        st.write("Here is the list of all feedback received:")
-        st.write("|    Name   |    password    |   profile    |")
-        st.write("|    ----   |    -----    |   --------   |")
-        for row in users_data:
-            st.write(f"| {row[1]} | {row[2]} |   {row[3]  }| ")
-    else:
-        st.write("No Users Registered yet.")
+with st.expander("Done", expanded=True):
+    if st.session_state.username == 'frz':
+        # Display feedback table
+        st.subheader("Users Table")
+        users_data = fetch_feedback_from_users_db()
+        if users_data:
+            st.write("Here is the list of all feedback received:")
+            st.write("|    Name   |    password    |   profile    |")
+            st.write("|    ----   |    -----    |   --------   |")
+            for row in users_data:
+                st.write(f"| {row[1]} | {row[2]} |   {row[3]  }| ")
+        else:
+            st.write("No Users Registered yet.")
