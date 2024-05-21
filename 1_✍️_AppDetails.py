@@ -367,23 +367,20 @@ def main():
     create_user_table()
 
     # st.title("Assignment writer")
-    st.markdown(""" <div class="container">
-      <div class="typed-out">Assignment Writer</div></div>""", unsafe_allow_html=True)
-    st.markdown(""" .container{
-          display: inline-block;
-        }
-        .typed-out{
-          overflow: hidden;
-          border-right: .15em solid orange;
-          white-space: nowrap;
-          animation: typing 0.4s steps(8, end) forwards infinte;
-          font-size: 1.6rem;
-          width: 0;
-        }
-        @keyframes typing {
-          from { width: 0 }
-          to { width: 100% }
-        }""",unsafe_allow_html=True)
+    st.markdown('<div class="container"><div class="typed-out">Assignment Writer</div></div>', unsafe_allow_html=True)
+    st.markdown('.container{display: inline-block;}
+                  .typed-out{
+                  overflow: hidden;
+                  border-right: .15em solid orange;
+                  white-space: nowrap;
+                  animation: typing 0.4s steps(8, end) forwards infinte;
+                  font-size: 1.6rem;
+                  width: 0;
+                }
+                @keyframes typing {
+                  from { width: 0 }
+                  to { width: 100% }
+                }',unsafe_allow_html=True)
     if "logged_in" not in st.session_state:
         st.session_state.logged_in = False
 
