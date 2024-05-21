@@ -368,7 +368,7 @@ def main():
 
     # st.title("Assignment writer")
     st.markdown(
-        '<div class="container"><div class="typed-out">ASSIGNMENT WRITER</div></div>',
+        '<div class="container"><h1 class="typed-out">ASSIGNMENT WRITER</h1></div>',
         unsafe_allow_html=True
     )
     st.markdown(
@@ -381,7 +381,7 @@ def main():
             overflow: hidden;
             border-right: 0.15em solid orange;
             white-space: nowrap;
-            animation: typing 0.4s steps(8, end) forwards infinite;
+            animation: typing 10s steps(8, end) forwards infinite;
             font-size: 1.6rem;
             width: 0;
         }
