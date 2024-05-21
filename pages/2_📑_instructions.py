@@ -14,6 +14,7 @@ hds = """<style>
     }
     p,h1{
     font-family:Source Code Pro,monospace;
+    line-height: 1.6;  /* Adjust the line height for better readability */
     }
     
     /* Custom sidebar text color */
