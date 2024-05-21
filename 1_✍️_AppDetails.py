@@ -403,6 +403,10 @@ def main():
             st.session_state.logged_in = False
             st.session_state.username = None
             st.session_state.profile_pic = None
+            st.session_state.question = ""
+            st.session_state.Gen_Ans = False
+            st.session_state.Gen_PDF = False
+            st.session_state.Answer = None
             st.success("You have been logged out.")
         else:
             st.sidebar.write(f"Usename: {st.session_state['username']}")
