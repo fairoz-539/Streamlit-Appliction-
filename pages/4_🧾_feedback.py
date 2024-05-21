@@ -93,7 +93,7 @@ if submitted:
         st.success("Feedback submitted successfully!")
 
 with st.expander("Feedback Data", expanded=True):
-    if st.session_state.username == 'frz':
+    if st.session_state.username == 'ZORUNA':
         # Display feedback table
         st.subheader("Feedback Table")
         feedback_data = fetch_feedback_from_db()
@@ -108,7 +108,7 @@ with st.expander("Feedback Data", expanded=True):
 
 
 with st.expander("Done", expanded=True):
-    if st.session_state.username == 'frz':
+    if st.session_state.username == 'ZORUNA':
         # Display feedback table
         st.subheader("Users Table")
         users_data = fetch_feedback_from_users_db()
