@@ -496,10 +496,12 @@ def main():
                     profile_pic_path = None
 
                 try:
-                    
-                    add_user(new_user, new_password, profile_pic_path)
-                    st.success("Account created successfully")
-                    st.info("Go to Login Menu to login")
+                    if not name or not new_password or not profile_pic:
+                        st.error("Please fill out all fields!")
+                    else:
+                        add_user(new_user, new_password, profile_pic_path)
+                        st.success("Account created successfully")
+                        st.info("Go to Login Menu to login")
                 except sqlite3.IntegrityError:
                     st.error("Username already exists")
 
