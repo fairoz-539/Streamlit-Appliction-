@@ -496,6 +496,7 @@ def main():
                     profile_pic_path = None
 
                 try:
+                    
                     add_user(new_user, new_password, profile_pic_path)
                     st.success("Account created successfully")
                     st.info("Go to Login Menu to login")
