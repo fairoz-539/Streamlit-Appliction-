@@ -368,7 +368,7 @@ def main():
 
     # st.title("Assignment writer")
     st.markdown(
-        '<div class="container"><h1 class="typed-out">ASSIGNMENT WRITER</h1></div>',
+        '<div class="container"><div class="typed-out">ASSIGNMENT WRITER</div></div>',
         unsafe_allow_html=True
     )
     st.markdown(
