@@ -302,7 +302,7 @@ def main_app():
                 # f"<h1 style='font-family:{st.session_state.font_family};'>{st.session_state.question}</h1>
                 f"<span style='font-family:{st.session_state.font_family}'>{answer}</span>",
                 unsafe_allow_html=True)
-        st.balloons()
+        
 
         st.write("\n\n\n\n\n\n")
         gen_pdf = st.button("Generate PDF")
@@ -332,7 +332,7 @@ def main_app():
                         # Display download link
                         download_link = f'<a href="data:application/pdf;base64,{base64_pdf}" download="Output.pdf">Download PDF</a>'
                         st.markdown(download_link, unsafe_allow_html=True)
-                        st.balloons()
+                        
             except Exception as e:
                 st.error("Error generating PDF: {}".format(e))
         else:
