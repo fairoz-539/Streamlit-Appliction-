@@ -116,6 +116,6 @@ if st.session_state.username == 'frz':
         st.write("|    Name   |    password    |   profile    |")
         st.write("|    ----   |    -----    |   --------   |")
         for row in users_data:
-            st.write(f"| {row[1]} | {row[2]} |   {row[3]    ")
+            st.write(f"| {row[1]} | {row[2]} |   {row[3]  }| ")
     else:
         st.write("No Users Registered yet.")
