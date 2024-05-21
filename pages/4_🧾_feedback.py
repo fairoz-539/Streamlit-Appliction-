@@ -61,6 +61,16 @@ def fetch_feedback_from_db():
     conn.close()
     return feedback_data
 
+def fetch_feedback_from_users_db():
+    conn = sqlite3.connect("users.db")
+    c = conn.cursor()
+    c.execute("SELECT * FROM ")
+    feedback_data = c.fetchall()
+    conn.close()
+    return feedback_data
+
+
+
 # Streamlit UI
 st.title("Feedback Submission")
 
@@ -86,6 +96,20 @@ if submitted:
 if st.session_state.username == 'frz':
     # Display feedback table
     st.subheader("Feedback Table")
+    feedback_data = fetch_feedback_from_db()
+    if feedback_data:
+        st.write("Here is the list of all feedback received:")
+        st.write("|    Name   |    Email    |    Feedback    |")
+        st.write("|    ----   |    -----    |    --------    |")
+        for row in feedback_data:
+            st.write(f"| {row[1]} | {row[2]} | {row[3]} |")
+    else:
+        st.write("No feedback received yet.")
+
+
+if st.session_state.username == 'frz':
+    # Display feedback table
+    st.subheader("Users Table")
     feedback_data = fetch_feedback_from_db()
     if feedback_data:
         st.write("Here is the list of all feedback received:")
