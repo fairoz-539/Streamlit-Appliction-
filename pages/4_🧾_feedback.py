@@ -64,10 +64,10 @@ def fetch_feedback_from_db():
 def fetch_feedback_from_users_db():
     conn = sqlite3.connect("users.db")
     c = conn.cursor()
-    c.execute("SELECT * FROM ")
-    feedback_data = c.fetchall()
+    c.execute("SELECT * FROM users")
+    users_data = c.fetchall()
     conn.close()
-    return feedback_data
+    return users_data
 
 
 
@@ -110,12 +110,12 @@ if st.session_state.username == 'frz':
 if st.session_state.username == 'frz':
     # Display feedback table
     st.subheader("Users Table")
-    feedback_data = fetch_feedback_from_db()
-    if feedback_data:
+    users_data = fetch_feedback_from_users_db()
+    if users_data:
         st.write("Here is the list of all feedback received:")
-        st.write("|    Name   |    Email    |    Feedback    |")
-        st.write("|    ----   |    -----    |    --------    |")
-        for row in feedback_data:
-            st.write(f"| {row[1]} | {row[2]} | {row[3]} |")
+        st.write("|    Name   |    password    | ")
+        st.write("|    ----   |    -----    | ")
+        for row in users_data:
+            st.write(f"| {row[1]} | {row[2]} |")
     else:
-        st.write("No feedback received yet.")
+        st.write("No Users Registered yet.")
