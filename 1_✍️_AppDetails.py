@@ -381,7 +381,7 @@ def main():
             overflow: hidden;
             border-right: 0.15em solid orange;
             white-space: nowrap;
-            animation: typing 5s steps(15, end) forwards infinite;
+            animation: typing 5s steps(20, end) forwards infinite;
             font-size: 1.6rem;
             width: 0;
         }
