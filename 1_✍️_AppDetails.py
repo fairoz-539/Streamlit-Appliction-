@@ -255,7 +255,7 @@ def main_app():
     if "Answer" not in st.session_state:
         st.session_state.Answer = None
 
-    st.write("\n\n\n\n\n\n\n\n\n")
+    st.write("\n\n\n\n\n\n\n\n\n\n\n")
     # Get user input
     st.session_state.question = st.text_input("Enter Your Question:", value=st.session_state.question)
             
@@ -266,11 +266,11 @@ def main_app():
         'Brush Script MT', 'Lucida Handwriting', 'Papyrus', 'Segoe Script'
         # Add more fonts as needed
     ]
-    st.write("\n\n\n\n\n")
+    st.write("\n\n\n\n\n\n\n\n\n")
     st.session_state.font_family = st.selectbox("Select Font Family:", font_options, index=font_options.index(st.session_state.font_family), disabled=True)
     
     # Button to generate the answer
-    st.write("\n\n\n\n\n")
+    st.write("\n\n\n\n\n\n\n\n")
     gen_answer = st.button("Generate Answer")
 
     # Generate answer when the button is clicked
@@ -278,6 +278,7 @@ def main_app():
         st.session_state.Gen_Ans = True
         st.session_state.Gen_PDF = False  # Reset the PDF generation state
         # Add a placeholder
+        st.write("\n\n\n\n\n\n\n\n")
         latest_iteration = st.empty()
         bar = st.progress(0)
 
@@ -286,7 +287,7 @@ def main_app():
             latest_iteration.text(f'Loading ....')
             bar.progress(i + 1)
             time.sleep(0.1)
-        
+        st.write("\n\n\n\n\n\n\n\n")
         st.session_state.Answer = generate_answer(st.session_state.question)
         latest_iteration.text(f'Loading Complete')
 
