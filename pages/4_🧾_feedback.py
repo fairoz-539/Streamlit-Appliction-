@@ -113,9 +113,9 @@ if st.session_state.username == 'frz':
     users_data = fetch_feedback_from_users_db()
     if users_data:
         st.write("Here is the list of all feedback received:")
-        st.write("|    Name   |    password    | ")
-        st.write("|    ----   |    -----    | ")
+        st.write("|    Name   |    password    |   profile    |")
+        st.write("|    ----   |    -----    |   --------   |")
         for row in users_data:
-            st.write(f"| {row[1]} | {row[2]} |")
+            st.write(f"| {row[1]} | {row[2]} |   {row[3]    ")
     else:
         st.write("No Users Registered yet.")
