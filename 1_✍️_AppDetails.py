@@ -247,7 +247,7 @@ def main_app():
     if "question" not in st.session_state:
         st.session_state.question = ""
     if "font_family" not in st.session_state:
-        st.session_state.font_family = 'Source Code Pro,monospace'
+        st.session_state.font_family = 'Times new Roman'
     if "Gen_Ans" not in st.session_state:
         st.session_state.Gen_Ans = False
     if "Gen_PDF" not in st.session_state:
