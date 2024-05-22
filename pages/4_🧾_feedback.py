@@ -99,11 +99,6 @@ if submitted:
         save_feedback_to_db(name, email, feedback_text)
         st.success("Feedback submitted successfully!")
 
-if st.session_state.username == 'ZORUNA':
-    if st.button("Delete"):
-        delete_from_users_db()
-
-
 with st.expander("Feedback Data", expanded=True):
     if st.session_state.username == 'ZORUNA':
         # Display feedback table
