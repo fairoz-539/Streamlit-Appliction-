@@ -29,17 +29,17 @@ hds = """<style>
      opacity: 0.8;
     }
     p,h1{
-    font-family:Source Code Pro,monospace;
+    font-family:Times new Roman;
     }
     div[data-testid="stSidebarContent"] {
         background-color: #052958; /* Text color */
-        font-family: Monospace !important;
+        # font-family: Monospace !important;
     }
     div[data-testid="stSidebarNavSeperator"] {
         background-color: #052958; /* Text color */
     }
     span{
-     font-family: Source Code Pro,monospace;
+     font-family: Times New Roman;
      }
     input[type="text"], input[type="number"], input[type="email"], input[type="password"], textarea, select, .st-aw{
         background-color: #0c1835;
