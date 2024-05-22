@@ -247,7 +247,7 @@ def main_app():
     if "question" not in st.session_state:
         st.session_state.question = ""
     if "font_family" not in st.session_state:
-        st.session_state.font_family = 'Times new Roman'
+        st.session_state.font_family = None
     if "Gen_Ans" not in st.session_state:
         st.session_state.Gen_Ans = False
     if "Gen_PDF" not in st.session_state:
@@ -267,7 +267,7 @@ def main_app():
         # Add more fonts as needed
     ]
     st.write("\n\n\n\n\n\n\n\n\n")
-    st.session_state.font_family = st.selectbox("Select Font Family:", font_options, index=font_options.index(st.session_state.font_family), disabled=True)
+    st.session_state.font_family = st.selectbox("Select Font Family:", font_options, index=font_options.index(st.session_state.font_family), disabled=False)
     
     # Button to generate the answer
     st.write("\n\n\n\n\n\n\n\n")
