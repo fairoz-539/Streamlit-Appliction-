@@ -500,7 +500,7 @@ def main():
                     profile_pic_path = None
 
                 try:
-                    if not new_user or not new_password or not profile_pic:
+                    if not new_user or not new_password:
                         st.error("Please fill out all fields!")
                     else:
                         add_user(new_user, new_password, profile_pic_path)
