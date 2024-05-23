@@ -29,7 +29,7 @@ hds = """<style>
      opacity: 0.8;
     }
     p,h1{
-    font-family: Sans serif;
+    font-family: Arial;
     }
     div[data-testid="stSidebarContent"] {
         background-color: #052958; /* Text color */
@@ -39,7 +39,7 @@ hds = """<style>
         background-color: #052958; /* Text color */
     }
     span{
-     font-family: Sans serif;
+     font-family: Arial;
      }
     input[type="text"], input[type="number"], input[type="email"], input[type="password"], textarea, select, .st-aw{
         background-color: #0c1835;
