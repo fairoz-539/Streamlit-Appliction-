@@ -267,7 +267,7 @@ def main_app():
         # Add more fonts as needed
     ]
     st.write("\n\n\n\n\n\n\n\n\n")
-    st.session_state.font_family = st.selectbox("Select Font Family:", font_options, index=font_options.index(st.session_state.font_family))
+    st.session_state.font_family = st.selectbox("Select Font Family:", font_options)
     
     # Button to generate the answer
     st.write("\n\n\n\n\n\n\n\n")
