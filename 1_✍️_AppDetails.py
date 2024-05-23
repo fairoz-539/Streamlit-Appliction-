@@ -300,7 +300,7 @@ def main_app():
             # Display answer in HTML format
         st.markdown(
                 # f"<h1 style='font-family:{st.session_state.font_family};'>{st.session_state.question}</h1>
-                f"<span style='font-family:{st.session_state.font_family}'>{answer}</span>",
+                f"""<span style='font-family:{st.session_state.font_family}'>{answer}</span>""",
                 unsafe_allow_html=True)
         
 
