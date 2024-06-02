@@ -13,7 +13,12 @@ st.set_page_config(
     page_title="Assignment Writer",
     page_icon="📝",
     layout='wide',
-    initial_sidebar_state="collapsed"
+    initial_sidebar_state="collapsed",
+    menu_items = {
+        'Get Help': '',
+        'Report a bug' : None,
+        'About': 'I\'m streamlit Assignment Writer '
+    }
 )
 
 api_key = st.secrets["cohere"]["api_key"]
