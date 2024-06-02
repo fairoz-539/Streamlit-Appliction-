@@ -15,7 +15,7 @@ st.set_page_config(
     layout='wide',
     initial_sidebar_state="collapsed",
     menu_items = {
-        'Get Help': '',
+        'Get Help': None,
         'Report a bug' : None,
         'About': 'I\'m streamlit Assignment Writer '
     }
